@@ -1,0 +1,38 @@
+@import "../../Variables.scss";
+
+.wrapper {
+    border-radius: 50px;
+    background-color: $grey;
+    width: 300px;
+    @media (max-width: 560px) {
+        width: 100%;
+    }
+    margin: 20px 0;
+    .balancer {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        gap: 10px;
+    }
+    .circle {
+        display:inline-block;
+        background-color: $pink;
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+    }
+    .btn {
+        padding: 10px 15px;
+        background-color: $purple;
+        width:fit-content;
+        color: $white;
+        border-radius: 50px;
+        transition: transform 0.5s;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        &:active {
+            transform: translateX(calc(300px - 100%));
+        }
+    }
+}

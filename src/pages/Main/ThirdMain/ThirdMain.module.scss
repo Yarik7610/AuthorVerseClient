@@ -1,0 +1,70 @@
+@import "../../../Variables.scss"; 
+
+.third {
+    width: 80%;
+    margin: 100px auto;
+    display: grid;
+    grid-template-columns: 4fr 5fr;
+    @media (max-width: 1035px) {
+        grid-template-columns: 1fr;
+        margin: 20px auto 40px auto;
+        width: 90%;
+    }
+    .left {
+        background-color: $pink;
+        padding: 30px 10%;
+        border-radius: 30px;
+        @media (max-width: 560px) {
+            padding: 30px;
+        }
+    }
+    .textHl {
+        font-size: 48px;
+        line-height: 120%;
+        font-weight: $font-weight + 200;
+        @media (max-width: 768px) {
+            text-align: center;
+        }
+    }
+    .right {
+        margin-left: 100px;
+        padding: 30px 10%;
+        @media (max-width: 1035px) {
+            grid-row: 1;
+            margin: 0;
+        }
+        @media (max-width: 560px) {
+            padding: 30px; 
+        }
+        .textHl {
+            font-size: 48px;
+            font-weight: $font-weight + 200;
+            text-align: center;
+            .span {
+                animation: blink-animation 0.95s steps(5, start) infinite;
+            }
+            @keyframes blink-animation {
+                to {
+                    visibility: hidden;
+                }
+            }
+            @-webkit-keyframes blink-animation {
+                to {
+                    visibility: hidden;
+                }
+            }
+        }
+        .textPar {
+            font-style: italic;
+        }
+    }
+}
+
+.textPar {
+    margin: 35px 0;
+    text-align: left;
+}
+.btnWrap {
+    display: flex;
+    justify-content: center;
+}
