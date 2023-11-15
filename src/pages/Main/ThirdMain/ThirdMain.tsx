@@ -14,8 +14,8 @@ export const ThirdMain = () => {
   return (
     <div className={s.third}>
       <div className={s.left}>
-        <h1 className={s.textHl}>Unleash Your Creativity, Weave Your Narrative</h1>
-        <p className={s.textPar}>
+        <h1 className={s.hl}>Unleash Your Creativity, Weave Your Narrative</h1>
+        <p className={s.par}>
           Dive into a world where your creativity takes the lead, and your stories are the stars.
           Our platform empowers you to explore uncharted literary realms, allowing you to craft
           intricate narratives and bring characters to life. Whether you're a budding wordsmith or a
@@ -29,10 +29,10 @@ export const ThirdMain = () => {
         </div>
       </div>
       <div className={s.right}>
-        <h1 className={s.textHl}>
+        <h1 className={s.hl}>
           Type your story <span className={s.span}>|</span>
         </h1>
-        <p className={s.textPar}>
+        <p className={s.par}>
           “When I approached the entrance to the basement, I saw bloody stains. The door itself was
           broken. Cold air seeped through the holes...”
         </p>

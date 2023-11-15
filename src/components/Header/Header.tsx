@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useWindowSize } from '../../Hooks/useWindowSize'
-import { RedirectBtn } from '../RedirectBtn/RedirectBtn'
 import s from './Header.module.scss'
 
 const isActive = ({ isActive }: { isActive: boolean }) => (isActive ? s.activeLi : s.li)
@@ -50,13 +49,17 @@ export const Header: React.FC = () => {
           </div>
         </div>
         <div className={s.right}>
-          {/* <li>Author</li> */}
           <li>
+            <NavLink to={'profile'} className={isActive}>
+              Author
+            </NavLink>
+          </li>
+          {/* <li>
             <div className={`${s.headerAuthBtns}`}>
               <NavLink to={'login'}>Log in</NavLink>
               <RedirectBtn to="signup" text="Sign up" />
             </div>
-          </li>
+          </li> */}
         </div>
       </ul>
     </div>

@@ -1,0 +1,151 @@
+@import '../../../Variables.scss';
+
+.grid {
+  display: grid;
+  margin: 0 0 40px 0;
+  grid-template-areas:
+    'nav main'
+    'nav main';
+  grid-template-columns: 200px 1fr;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'nav nav'
+      'main main';
+  }
+  .nav {
+    grid-area: nav;
+    overflow: hidden;
+    .navBlock {
+      grid-area: nav;
+      background-color: $lightgray;
+      padding: 10px;
+      margin-top: 20px;
+      border-radius: 10px;
+      height: fit-content;
+      @media (max-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+      }
+      h3 {
+        padding: 0px 15px 5px 15px;
+      }
+      .li {
+        padding: 7px 15px;
+        &:not(.active) {
+          cursor: pointer;
+        }
+        &:not(.active):hover {
+          background-color: rgba(217, 217, 217, 0.23);
+          border-radius: 5px;
+        }
+        &.active {
+          cursor: defau lt;
+          color: $purple;
+          font-weight: $font-weight;
+          position: relative;
+          @media (max-width: 768px) {
+            &.active::before {
+              display: none;
+            }
+          }
+          &::before {
+            content: '';
+            position: absolute;
+            left: 2.5px;
+            top: 50%;
+            margin-top: (-3.5px);
+            width: 7px;
+            height: 7px;
+            border-radius: 7px;
+            background-color: $purple;
+          }
+        }
+      }
+      &.categories {
+        overflow-x: scroll;
+        .li {
+          @media (max-width: 768px) {
+            padding: 0 15px;
+          }
+        }
+        &::-webkit-scrollbar {
+          width: 0;
+          height: 0;
+          background: transparent; /* опционально */
+        }
+      }
+      .acsDesc {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        @media (max-width: 768px) {
+          margin-top: 0;
+        }
+        .svg {
+          &:not(.active) {
+            cursor: pointer;
+          }
+          transition: color $tr;
+          &:hover {
+            color: $purple;
+          }
+          &.active {
+            color: $purple;
+          }
+        }
+      }
+    }
+  }
+
+  .main {
+    grid-area: main;
+    margin-left: 30px;
+    @media (max-width: 768px) {
+      margin: 0;
+      h2 {
+        font-size: 22px;
+      }
+    }
+    .booksWrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 240px;
+      gap: 20px;
+      height: 500px;
+      overflow-y: auto;
+      @media (max-width: 1200px) {
+        grid-template-columns: 1fr;
+      }
+      .preloaderWrap {
+        background-color: $lightgray;
+        border-radius: 10px;
+        height: 240px;
+      }
+      .book {
+        background-color: $lightgray;
+        border-radius: 10px;
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+        height: 240px;
+        img {
+          display: block;
+          width: 130px;
+          height: 200px;
+          border-radius: 5px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+        .right {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          // .chapters {
+          // }
+        }
+      }
+    }
+  }
+}

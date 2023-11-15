@@ -9,11 +9,7 @@ export const SliderCard: React.FC<ISliderCard> = ({ img }) => {
   return (
     <NavLink to={`/${img.bookId}`}>
       <div className={s.sliderCard}>
-        <img
-          className={s.slideImg}
-          src={'https://localhost:7069/api/images/' + img.bookCoverUrl}
-          alt={img.bookCoverUrl}
-        />
+        <img src={'https://localhost:7069/api/images/' + img.bookCoverUrl} alt={img.bookCoverUrl} />
       </div>
     </NavLink>
   )

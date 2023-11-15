@@ -1,75 +1,72 @@
 $font-weight: 500;
 .first {
-    box-sizing: border-box;
-    width: 80%;
-    margin: 0 auto;
-    padding: 100px 0;
-    position: relative;
+  box-sizing: border-box;
+  width: 80%;
+  margin: 0 auto;
+  padding: 100px 0;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  @media (max-width: 1035px) {
+    grid-template-columns: none;
+    gap: 30px;
+    width: 100%;
+    padding: 0 0 50px 0;
+  }
+  .content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: fit-content(1em);
     @media (max-width: 1035px) {
-        grid-template-columns: none;
-        gap: 30px;
-        width: 100%;
-        padding: 0 0 50px 0;
+      grid-template-columns: 1fr;
+      justify-items: center;
     }
-    .mainText {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: fit-content(1em);
-        @media (max-width: 1035px) {
-            grid-template-columns: 1fr;
-            justify-items: center;
-        }
-        .mainTextHl {
-            font-size: 96px;
-            font-weight: $font-weight;
-        }
-        :nth-child(1) {
-            justify-self: flex-end;
-            @media (max-width: 1035px) {
-                justify-self: center;
-            }
-            
-        }
-        :nth-child(2) {
-            .amountOfBooks {
-                font-weight: $font-weight + 200;
-            }
-            align-self: flex-end;
-            @media (max-width: 1430px) {
-                grid-row: 4;
-                grid-column: 1;
-                align-self: flex-start;
-            }
-        }
-        :nth-child(3) {
-            grid-column: 2;
-            @media (max-width: 1430px) {
-                grid-column: 1;
-            }
-           
-        }
-        :nth-child(4) {
-            grid-area: 3 / 1 / 4 / 3;
-            justify-self: center;
-            @media (max-width: 1430px) {
-                justify-self: flex-start;
-            }
-            @media (max-width: 1035px) {
-                justify-self: center;
-            }
-        }
+    .hl {
+      font-size: 96px;
+      font-weight: $font-weight;
     }
-    .img {
-        display: block;
-        justify-self: flex-end;
-        width: 560px;
-        max-width: 90%;
-        object-fit: contain;
-        @media (max-width: 1430px) {
-            justify-self: center;
-        }
-       
+    :nth-child(1) {
+      justify-self: flex-end;
+      @media (max-width: 1035px) {
+        justify-self: center;
+      }
     }
+    :nth-child(2) {
+      .amountOfBooks {
+        font-weight: $font-weight + 200;
+      }
+      align-self: flex-end;
+      @media (max-width: 1430px) {
+        grid-row: 4;
+        grid-column: 1;
+        align-self: flex-start;
+      }
+    }
+    :nth-child(3) {
+      grid-column: 2;
+      @media (max-width: 1430px) {
+        grid-column: 1;
+      }
+    }
+    :nth-child(4) {
+      grid-area: 3 / 1 / 4 / 3;
+      justify-self: center;
+      @media (max-width: 1430px) {
+        justify-self: flex-start;
+      }
+      @media (max-width: 1035px) {
+        justify-self: center;
+      }
+    }
+  }
+  img {
+    display: block;
+    justify-self: flex-end;
+    width: 560px;
+    max-width: 90%;
+    object-fit: contain;
+    @media (max-width: 1430px) {
+      justify-self: center;
+    }
+  }
 }

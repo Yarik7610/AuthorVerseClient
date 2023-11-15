@@ -55,13 +55,7 @@ export const Slider: React.FC<ISlider> = ({ images }) => {
   }, [windowSize.width])
 
   return (
-    <main
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}>
+    <main>
       <div style={{ display: 'flex', alignItems: 'center', width: '100%', maxWidth: '72rem' }}>
         {windowSize.width < 2400 && (
           <button onClick={() => swiperRef.current.swiper.slidePrev()}>

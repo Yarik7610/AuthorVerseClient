@@ -1,0 +1,16 @@
+.wrap {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  img {
+    height: 200px;
+    width: 200px;
+    // position: absolute;
+    // display: block;
+    // top: 50%;
+    // transform: translate(-50%, -50%);
+    // left: 50%;
+    // top: 50%;
+  }
+}

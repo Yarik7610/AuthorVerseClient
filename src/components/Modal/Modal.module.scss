@@ -1,0 +1,67 @@
+@import '../../Variables.scss';
+.wrap {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  .modal {
+    overflow: hidden;
+    overflow-y: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    max-width: 90%;
+    height: 500px;
+    background-color: white;
+    border-radius: 5px;
+    animation: 0.2s scaling;
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: lightgray;
+      border: 2px solid white;
+    }
+    &::-webkit-scrollbar-track-piece:start {
+      background: transparent;
+      margin-top: 20px;
+    }
+    &::-webkit-scrollbar-track-piece:end {
+      background: transparent;
+      margin-bottom: 20px;
+    }
+    .closeModalBtn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      padding: 0;
+      border: none;
+      color: $purple;
+      background-color: transparent;
+      cursor: pointer;
+      font: inherit;
+      transition: opacity $tr;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+    @keyframes scaling {
+      from {
+        transform: translate(-50%, -50%) scale(0);
+      }
+      to {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+  }
+}

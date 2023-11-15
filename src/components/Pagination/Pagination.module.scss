@@ -1,0 +1,67 @@
+@import '../../Variables.scss';
+
+.wrap {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+    .li {
+      min-width: 40px;
+      min-height: 40px;
+      border: 1px solid $purple;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 10px;
+      color: $purple;
+      user-select: none;
+      cursor: pointer;
+      &:hover {
+        background-color: $purple;
+        opacity: 0.5;
+        color: white;
+      }
+    }
+    .ellipsis {
+      min-width: 20px;
+      border: none;
+      border-radius: none;
+      &:hover {
+        background-color: $purple;
+        opacity: 0.5;
+        color: white;
+      }
+    }
+    .active {
+      min-width: 40px;
+      min-height: 40px;
+      border: 1px solid $purple;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 10px;
+      color: $purple;
+      user-select: none;
+      background-color: $purple;
+      color: white;
+    }
+  }
+}
+.arrow {
+  width: 40px;
+  height: 40px;
+  color: $purple;
+  border: 1px solid $purple;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  user-select: none;
+  cursor: pointer;
+  &:hover {
+    background-color: $purple;
+    color: white;
+    opacity: 0.5;
+  }
+}

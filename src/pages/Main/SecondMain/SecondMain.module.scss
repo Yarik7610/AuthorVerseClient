@@ -1,43 +1,43 @@
-@import "../../../Variables.scss"; 
+@import '../../../Variables.scss';
 
 .second {
-    width: 90%;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 4fr 3fr;
-    gap: 50px;
-    @media (max-width: 1035px) {
-        grid-template-columns: 1fr;
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+  gap: 50px;
+  @media (max-width: 1035px) {
+    grid-template-columns: 1fr;
+  }
+  .sliders {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    div {
+      margin-bottom: 15px;
     }
-    .sliders {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        p {
-            margin-bottom: 15px;
-        }
-    }
+  }
 }
 
-.textBlock {
-    align-self: center;
-    .textHl {
-        font-size: 48px;
-        text-align: end;
-        font-weight: $font-weight + 200;
-        @media (max-width: 768px) {
-            text-align: center;
-        }
+.right {
+  align-self: center;
+  .hl {
+    font-size: 48px;
+    text-align: end;
+    font-weight: $font-weight + 200;
+    @media (max-width: 768px) {
+      text-align: center;
     }
-    .textPar {
-        margin: 35px 0;
-        text-align: end;
-        @media (max-width: 768px) {
-            text-align: center;
-        }
+  }
+  .par {
+    margin: 35px 0;
+    text-align: end;
+    @media (max-width: 768px) {
+      text-align: center;
     }
-    .btnWrap {
-        display: flex;
-        justify-content: center;
-    }
+  }
+  .btnWrap {
+    display: flex;
+    justify-content: center;
+  }
 }

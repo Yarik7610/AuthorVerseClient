@@ -23,16 +23,16 @@ const SlidersMain = () => {
     <div className={s.sliders}>
       <div>
         <h1>Explore your tastes</h1>
-        <p>
+        <div>
           with <strong>Most</strong> read books
-        </p>
+        </div>
         <Slider images={images.slice(0, 5)} />
       </div>
       <div>
         <h1>Continue your jorney</h1>
-        <p>
+        <div>
           with <strong>Popular</strong> novelties
-        </p>
+        </div>
         <Slider images={images.slice(5, 10)} />
       </div>
     </div>
@@ -41,11 +41,11 @@ const SlidersMain = () => {
 
 export const SecondMain = () => {
   return (
-    <div className={s.second}>
+    <section className={s.second}>
       <SlidersMain />
-      <div className={s.textBlock}>
-        <h1 className={s.textHl}>Open the door to a new world</h1>
-        <p className={s.textPar}>
+      <div className={s.right}>
+        <h1 className={s.hl}>Open the door to a new world</h1>
+        <p className={s.par}>
           You will find a huge and captivating catalog of books. We offer a wide selection of
           literature, from classic works to modern bestsellers. Regardless of your taste and
           interests, we have books for all age groups and genre preferences. Don't miss the
@@ -56,6 +56,6 @@ export const SecondMain = () => {
           <RedirectBtn to="books" text="See more" length="50" />
         </div>
       </div>
-    </div>
+    </section>
   )
 }

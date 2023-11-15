@@ -13,17 +13,17 @@ export const FirstMain = () => {
     fetchBookCount().catch(console.error)
   }, [])
   return (
-    <div className={s.first}>
-      <div className={s.mainText}>
-        <h1 className={s.mainTextHl}>Author</h1>
+    <section className={s.first}>
+      <div className={s.content}>
+        <h1 className={s.hl}>Author</h1>
         <p>
           <span className={s.amountOfBooks}>{!bookCount ? "Lot's of" : bookCount}</span>
           <span> books to read</span>
         </p>
-        <h1 className={s.mainTextHl}>Verse</h1>
+        <h1 className={s.hl}>Verse</h1>
         <p>Unleash Your Creativity with the Power of Books</p>
       </div>
-      <img className={s.img} src={bg} />
-    </div>
+      <img src={bg} />
+    </section>
   )
 }

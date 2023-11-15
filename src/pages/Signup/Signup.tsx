@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai'
-import s from './SignupForm.module.scss'
+import s from './Signup.module.scss'
 
 interface ISignupForm {
   username: string
@@ -9,7 +9,7 @@ interface ISignupForm {
   password: string
 }
 
-export const SignupForm = () => {
+export const Signup = () => {
   const [isVisible, setIsVisible] = useState(false)
   const {
     register,
@@ -25,13 +25,13 @@ export const SignupForm = () => {
     reset()
   }
   return (
-    <div className={s.box}>
+    <div className={s.wrap}>
       <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
-        <h1 className={s.formTitle}>Sign Up</h1>
-        <div className={`${s.formGroup} ${errors.username ? `${s.error}` : ''}`}>
+        <h1 className={s.title}>Sign Up</h1>
+        <div className={`${s.group} ${errors.username ? `${s.error}` : ''}`}>
           <input
             type="text"
-            className={`${s.formControl} ${errors.username ? `${s.error}` : ''}`}
+            className={`${s.input} ${errors.username ? `${s.error}` : ''}`}
             {...register('username', {
               required: 'This field is required',
               pattern: {
@@ -43,16 +43,14 @@ export const SignupForm = () => {
             })}
             required
           />
-          <label className={`${s.formLabel} ${errors.username ? `${s.error}` : ''}`}>
-            Username
-          </label>
+          <label className={`${s.label} ${errors.username ? `${s.error}` : ''}`}>Username</label>
         </div>
         {errors.username && <div className={s.errorMessage}>{errors.username.message}</div>}
 
-        <div className={`${s.formGroup} ${errors.email ? `${s.error}` : ''}`}>
+        <div className={`${s.group} ${errors.email ? `${s.error}` : ''}`}>
           <input
             type="text"
-            className={`${s.formControl} ${errors.email ? `${s.error}` : ''}`}
+            className={`${s.input} ${errors.email ? `${s.error}` : ''}`}
             {...register('email', {
               required: 'This field is required',
               pattern: {
@@ -65,14 +63,14 @@ export const SignupForm = () => {
             })}
             required
           />
-          <label className={`${s.formLabel} ${errors.email ? `${s.error}` : ''}`}>Email</label>
+          <label className={`${s.label} ${errors.email ? `${s.error}` : ''}`}>Email</label>
         </div>
         {errors.email && <div className={s.errorMessage}>{errors.email.message}</div>}
 
-        <div className={`${s.formGroup} ${errors.password ? `${s.error}` : ''}`}>
+        <div className={`${s.group} ${errors.password ? `${s.error}` : ''}`}>
           <input
             type={isVisible ? 'text' : 'password'}
-            className={`${s.formControl} ${errors.password ? `${s.error}` : ''}`}
+            className={`${s.input} ${errors.password ? `${s.error}` : ''}`}
             {...register('password', {
               required: 'This field is required',
               pattern: {
@@ -86,7 +84,7 @@ export const SignupForm = () => {
             })}
             required
           />
-          <label className={`${s.formLabel} ${errors.password ? `${s.error}` : ''}`}>
+          <label className={`${s.label} ${errors.password ? `${s.error}` : ''}`}>
             Enter Your Password
           </label>
           <div className={s.formEye}>
@@ -99,7 +97,7 @@ export const SignupForm = () => {
         </div>
         {errors.password && <div className={s.errorMessage}>{errors.password.message}</div>}
 
-        <div className={s.bottomBox}>
+        <div className={s.btnWrap}>
           <button className={s.formButton}>Next</button>
         </div>
       </form>
