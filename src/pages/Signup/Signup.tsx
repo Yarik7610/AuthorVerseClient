@@ -89,9 +89,9 @@ export const Signup = () => {
           </label>
           <div className={s.formEye}>
             {!isVisible ? (
-              <AiFillEye size={'1.4em'} onClick={() => setIsVisible(true)} />
+              <AiFillEye size={'1.4rem'} onClick={() => setIsVisible(true)} />
             ) : (
-              <AiFillEyeInvisible size={'1.4em'} onClick={() => setIsVisible(false)} />
+              <AiFillEyeInvisible size={'1.4rem'} onClick={() => setIsVisible(false)} />
             )}
           </div>
         </div>

@@ -61,10 +61,10 @@ export const ProfileBooks = () => {
         </ul>
       </nav>
       <main className={s.main}>
-        <SearchBar query="" setQuery={() => {}} setPage={() => {}} width="100%" />
+        <SearchBar type="book" query="" setQuery={() => {}} setPage={() => {}} width="100%" />
         <div className={s.booksWrap}>
           {/* <div className={s.book}>
-            <img src={img} alt="profile image" />
+            <img src={img} alt="book image" />
             <div className={s.right}>
               <div>
                 <h2>Tess of the Road</h2>

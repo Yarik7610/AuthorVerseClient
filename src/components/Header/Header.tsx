@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import { RxCross1, RxHamburgerMenu } from 'react-icons/rx'
 import { NavLink } from 'react-router-dom'
 import { useWindowSize } from '../../Hooks/useWindowSize'
 import s from './Header.module.scss'
 
-const isActive = ({ isActive }: { isActive: boolean }) => (isActive ? s.activeLi : s.li)
+const isActive = ({ isActive }: { isActive: boolean }) =>
+  isActive ? `${s.li} ${s.active}` : `${s.li}`
 
 export const Header: React.FC = () => {
   const [isMenuActive, setIsMenuActive] = useState(false)
@@ -26,10 +28,20 @@ export const Header: React.FC = () => {
             Creator
           </NavLink>
         </div>
-        <div
-          className={`${s.burger} ${isMenuActive ? s.active : ''}`}
-          onClick={() => setIsMenuActive(!isMenuActive)}>
-          <span></span>
+        <div className={s.burger}>
+          {!isMenuActive ? (
+            <RxHamburgerMenu
+              size={'1.5rem'}
+              color="#614ed9"
+              onClick={() => setIsMenuActive(!isMenuActive)}
+            />
+          ) : (
+            <RxCross1
+              size={'1.5rem'}
+              color="#614ed9"
+              onClick={() => setIsMenuActive(!isMenuActive)}
+            />
+          )}
         </div>
         <div className={`${s.hiddenMenu} ${isMenuActive ? '' : s.hidden}`}>
           <div>
@@ -51,7 +63,7 @@ export const Header: React.FC = () => {
         <div className={s.right}>
           <li>
             <NavLink to={'profile'} className={isActive}>
-              Author
+              Profile
             </NavLink>
           </li>
           {/* <li>

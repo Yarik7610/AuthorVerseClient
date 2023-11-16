@@ -71,7 +71,7 @@ export const Books = () => {
   return (
     <>
       <BigSlider data={sliderData} />
-      <SearchBar query={query} setQuery={setQuery} setPage={setPage} />
+      <SearchBar type="book" query={query} setQuery={setQuery} setPage={setPage} />
       <CollapseMenu
         name="Tags"
         color="purple"

@@ -4,7 +4,6 @@ import { register } from 'swiper/element/bundle'
 import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
-import { useWindowSize } from '../../Hooks/useWindowSize'
 import { Preloader } from '../Preloader/Preloader'
 import s from './BigSlider.module.scss'
 import { BookSlide, ISliderBook } from './BookSlide/BookSlide'
@@ -14,7 +13,6 @@ export interface IBigSlider {
   data: Array<ISliderBook>
 }
 export const BigSlider: React.FC<IBigSlider> = memo(({ data }) => {
-  const windowSize = useWindowSize()
   const swiperRef = useRef(null)
   const [swiperProgress, setSwiperProgress] = useState(0)
 

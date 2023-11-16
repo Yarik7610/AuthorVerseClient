@@ -1,62 +1,33 @@
-$font-weight: 500;
+@import '../../../Variables.scss';
+
 .first {
-  box-sizing: border-box;
   width: 80%;
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 50px 0;
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   @media (max-width: 1035px) {
-    grid-template-columns: none;
+    grid-template-columns: 1fr;
     gap: 30px;
     width: 100%;
     padding: 0 0 50px 0;
   }
   .content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: fit-content(1em);
+    @media (min-width: 1430px) {
+      justify-self: center;
+    }
     @media (max-width: 1035px) {
       grid-template-columns: 1fr;
       justify-items: center;
+      text-align: center;
     }
     .hl {
       font-size: 96px;
       font-weight: $font-weight;
     }
-    :nth-child(1) {
-      justify-self: flex-end;
-      @media (max-width: 1035px) {
-        justify-self: center;
-      }
-    }
-    :nth-child(2) {
-      .amountOfBooks {
-        font-weight: $font-weight + 200;
-      }
-      align-self: flex-end;
-      @media (max-width: 1430px) {
-        grid-row: 4;
-        grid-column: 1;
-        align-self: flex-start;
-      }
-    }
-    :nth-child(3) {
-      grid-column: 2;
-      @media (max-width: 1430px) {
-        grid-column: 1;
-      }
-    }
-    :nth-child(4) {
-      grid-area: 3 / 1 / 4 / 3;
-      justify-self: center;
-      @media (max-width: 1430px) {
-        justify-self: flex-start;
-      }
-      @media (max-width: 1035px) {
-        justify-self: center;
-      }
+    .amountOfBooks {
+      font-weight: $font-weight + 200;
     }
   }
   img {
@@ -65,8 +36,6 @@ $font-weight: 500;
     width: 560px;
     max-width: 90%;
     object-fit: contain;
-    @media (max-width: 1430px) {
-      justify-self: center;
-    }
+    justify-self: center;
   }
 }

@@ -28,14 +28,13 @@ export const Pagination: React.FC<IPagination> = React.memo(
     const setPage = (page: number) => {
       onPageClick(page)
     }
-
     const setPreviousPage = () => {
       if (currentPage > 1) onPageClick(currentPage - 1)
     }
-
     const setNextPage = () => {
       if (currentPage < pages.length) onPageClick(currentPage + 1)
     }
+
     if (booksCount === 0) return <></>
     return (
       <div className={s.wrap}>
@@ -65,7 +64,7 @@ export const Pagination: React.FC<IPagination> = React.memo(
           <MdKeyboardArrowRight onClick={() => setNextPage()} className={s.arrow} />
         </ul>
         {isOpened && (
-          <Modal height="200" isOpened={isOpened} setIsOpened={setIsOpened}>
+          <Modal height="200px" isOpened={isOpened} setIsOpened={setIsOpened}>
             <ModalPagination lastPage={LAST_PAGE} setPage={setPage} setIsOpened={setIsOpened} />
           </Modal>
         )}

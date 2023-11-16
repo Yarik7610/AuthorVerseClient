@@ -15,8 +15,9 @@ interface ISearchBar {
   setQuery: React.Dispatch<SetStateAction<string>>
   setPage: React.Dispatch<React.SetStateAction<number>>
   width?: string
+  type?: string
 }
-export const SearchBar: React.FC<ISearchBar> = memo(({ query, setQuery, setPage, width }) => {
+export const SearchBar: React.FC<ISearchBar> = memo(({ query, setQuery, setPage, width, type }) => {
   const [value, setValue] = useState(query)
 
   const updateSearchValue = (data: string) => {
@@ -41,7 +42,7 @@ export const SearchBar: React.FC<ISearchBar> = memo(({ query, setQuery, setPage,
           onChange={handleChange}
           className={s.search}
           type="search"
-          placeholder="Search book..."
+          placeholder={`Search${type ? ` ${type}` : ''}...`}
         />
         <button onClick={clearQuery}>
           <RxCross2 size={'1.5rem'} />

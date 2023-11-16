@@ -1,0 +1,33 @@
+@import '../../../Variables.scss';
+@import '../../../App.scss';
+
+.wrap {
+  width: 80%;
+  margin: 0 auto;
+  word-break: break-word;
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    background-color: $lightgray;
+    border-radius: 10px;
+    padding: 10px 20px;
+    .li {
+      text-align: center;
+      @extend %profileNavLi;
+    }
+  }
+  .comment {
+    border-radius: 10px;
+    background-color: $lightgray;
+    padding: 30px;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 20px;
+    p {
+      margin: 10px 0;
+    }
+  }
+}

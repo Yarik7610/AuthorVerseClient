@@ -59,9 +59,9 @@ export const CollapseMenu: React.FC<ICollapseMenu> = ({
         </ul>
         <div className={s.arrowWrap}>
           {!isOpened ? (
-            <SlArrowDown size={'1.5em'} onClick={() => setIsOpened(true)} />
+            <SlArrowDown size={'1.5rem'} onClick={() => setIsOpened(true)} />
           ) : (
-            <SlArrowUp size={'1.5em'} onClick={() => setIsOpened(false)} />
+            <SlArrowUp size={'1.5rem'} onClick={() => setIsOpened(false)} />
           )}
         </div>
       </div>

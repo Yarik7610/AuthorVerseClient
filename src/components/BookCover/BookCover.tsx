@@ -22,7 +22,7 @@ export const BookCover: React.FC<IBookCover> = ({ book }) => {
         </div>
       </div>
       <div className={s.right}>
-        <h2>{book.title ? book.title : 'No title yet'}</h2>
+        <h2 className={s.bookTitle}>{book.title ? book.title : 'No title yet'}</h2>
         <div className={s.authorUserName}>{book.author.userName}</div>
         <div
           className={s.date}>{`${parsedDate.monthFull} ${parsedDate.day}, ${parsedDate.year}`}</div>

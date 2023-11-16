@@ -15,8 +15,6 @@ export interface IListBook {
   bookCoverUrl: string
   rating: number
   publicationData: string
-  // endings: number
-  // choices: number
 }
 interface IBooksList {
   books: Array<IListBook>

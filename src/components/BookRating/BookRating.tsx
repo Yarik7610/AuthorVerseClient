@@ -14,7 +14,7 @@ export const BookRating: React.FC<IBookRaiting> = ({ rating }) => {
   let truncedRight = truncedLeft !== half ? 5 - half : 5 - truncedLeft
 
   return (
-    <div className={s.wrapper}>
+    <div className={s.wrap}>
       {[...new Array(truncedLeft)].map((_, index) => (
         <BsStarFill color={'#F2CEF2'} key={index} />
       ))}

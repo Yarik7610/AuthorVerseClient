@@ -51,7 +51,9 @@ export const BookSlide: React.FC<IBookSlide> = ({ book }) => {
             <p className={s.desc}>{book.description ? book.description : 'No description yet'}</p>
             <Tape data={book.tags} date={parsedDate} color="purple" />
             <Tape data={book.genres} color="pink" />
-            <BookRating rating={book.rating} />
+            <div className={s.bookRating}>
+              <BookRating rating={book.rating} />
+            </div>
             <div className={s.endings}>
               <span>{`Endings: ${book.endings}`}</span>
               <span>{`Choices: ${book.choices}`}</span>

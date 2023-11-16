@@ -23,21 +23,20 @@ export const Modal: React.FC<IModal> = ({ setIsOpened, children, height }) => {
     return () => {
       document.body.classList.remove('activeModal')
       document.body.removeEventListener('mousedown', handleClickOutside)
-      // dispatch(resetStatusMsg())
       setIsOpened(false)
     }
   }, [])
 
   return (
     <div className={s.wrap}>
-      <div ref={modalRef} className={s.modal} style={{ height: `${height}px` }}>
+      <div ref={modalRef} className={s.modal} style={{ height: `${height}` }}>
         {children}
         <button
           className={s.closeModalBtn}
           onClick={() => {
             setIsOpened(false)
           }}>
-          <RxCross2 size={'2em'} />
+          <RxCross2 size={'2rem'} />
         </button>
       </div>
     </div>

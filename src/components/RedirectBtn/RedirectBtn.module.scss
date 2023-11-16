@@ -1,11 +1,8 @@
 @import '../../Variables.scss';
+@import '../../App.scss';
 
 .btn {
-  background-color: $purple;
-  font-weight: $font-weight;
-  color: $white !important;
-  padding: 10px 24px;
-  border-radius: 30px;
+  @extend %btn;
   &.link {
     &:hover {
       transform: scale(1.025);

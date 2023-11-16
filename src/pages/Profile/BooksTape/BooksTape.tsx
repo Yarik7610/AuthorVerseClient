@@ -16,12 +16,17 @@ export const BooksTape = () => {
         <li className={s.imgWrap}>
           <img src={img} />
           <div className={s.chapter}>Chapter 35 - Continues</div>
-          <h3>Book name</h3>
+          <h3 className={s.bookName}>Book name</h3>
         </li>
         <li className={s.imgWrap}>
           <img src={img} />
           <div className={s.chapter}>Chapter 35 - Continues</div>
-          <h3>Book name</h3>
+          <h3 className={s.bookName}>Book name</h3>
+        </li>
+        <li className={s.imgWrap}>
+          <img src={img} />
+          <div className={s.chapter}>Chapter 35 - Continues</div>
+          <h3 className={s.bookName}>Book name</h3>
         </li>
       </ul>
     </div>

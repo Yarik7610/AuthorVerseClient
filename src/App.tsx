@@ -1,12 +1,13 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.scss'
+import { Footer } from './components/Footer/Footer'
 import { Header } from './components/Header/Header'
 import { Books } from './pages/Books/Books'
 import { Login } from './pages/Login/Login'
-import { Footer } from './pages/Main/Footer/Footer'
 import { Main } from './pages/Main/Main'
 import { Profile } from './pages/Profile/Profile'
 import { ProfileBooks } from './pages/Profile/ProfileBooks/ProfileBooks'
+import { ProfileComments } from './pages/Profile/ProfileComments/ProfileComments'
 import { Signup } from './pages/Signup/Signup'
 
 const App = () => {
@@ -21,7 +22,7 @@ const App = () => {
           <Route path="/books" element={<Books />} />
           <Route path="/profile" element={<Profile />}>
             <Route path="" element={<ProfileBooks />} />
-            <Route path="comments" element={<div>comments</div>} />
+            <Route path="comments" element={<ProfileComments />} />
             <Route path="friends" element={<div>friends</div>} />
             <Route path="yourBooks" element={<div>your books</div>} />
           </Route>

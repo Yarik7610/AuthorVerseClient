@@ -1,7 +1,8 @@
 import { NavLink, Outlet } from 'react-router-dom'
 import s from './ProfileMain.module.scss'
 
-export const isActive = ({ isActive }: { isActive: boolean }) => (isActive ? s.activeLi : s.li)
+const isActive = ({ isActive }: { isActive: boolean }) =>
+  isActive ? `${s.li} ${s.active}` : `${s.li}`
 
 export const ProfileMain = () => {
   return (

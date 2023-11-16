@@ -1,4 +1,5 @@
 @import '../../../Variables.scss';
+@import '../../../App.scss';
 
 .grid {
   display: grid;
@@ -31,36 +32,7 @@
         padding: 0px 15px 5px 15px;
       }
       .li {
-        padding: 7px 15px;
-        &:not(.active) {
-          cursor: pointer;
-        }
-        &:not(.active):hover {
-          background-color: rgba(217, 217, 217, 0.23);
-          border-radius: 5px;
-        }
-        &.active {
-          cursor: defau lt;
-          color: $purple;
-          font-weight: $font-weight;
-          position: relative;
-          @media (max-width: 768px) {
-            &.active::before {
-              display: none;
-            }
-          }
-          &::before {
-            content: '';
-            position: absolute;
-            left: 2.5px;
-            top: 50%;
-            margin-top: (-3.5px);
-            width: 7px;
-            height: 7px;
-            border-radius: 7px;
-            background-color: $purple;
-          }
-        }
+        @extend %profileNavLi;
       }
       &.categories {
         overflow-x: scroll;
@@ -72,7 +44,6 @@
         &::-webkit-scrollbar {
           width: 0;
           height: 0;
-          background: transparent; /* опционально */
         }
       }
       .acsDesc {
@@ -132,18 +103,14 @@
         padding: 20px;
         height: 240px;
         img {
-          display: block;
+          @extend %bookImg;
           width: 130px;
           height: 200px;
-          border-radius: 5px;
-          box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
         }
         .right {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          // .chapters {
-          // }
         }
       }
     }

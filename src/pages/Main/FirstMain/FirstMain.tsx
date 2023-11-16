@@ -16,11 +16,11 @@ export const FirstMain = () => {
     <section className={s.first}>
       <div className={s.content}>
         <h1 className={s.hl}>Author</h1>
+        <h1 className={s.hl}>Verse</h1>
         <p>
           <span className={s.amountOfBooks}>{!bookCount ? "Lot's of" : bookCount}</span>
           <span> books to read</span>
         </p>
-        <h1 className={s.hl}>Verse</h1>
         <p>Unleash Your Creativity with the Power of Books</p>
       </div>
       <img src={bg} />
