@@ -1,13 +1,11 @@
+@import '../../App.scss';
+
 .tape {
+  @extend %invisibleScrollbar;
   display: flex;
   overflow: auto;
   white-space: nowrap;
   margin-bottom: 10px;
-  &::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    background: transparent; /* опционально */
-  }
   ul {
     align-items: center;
     display: flex;

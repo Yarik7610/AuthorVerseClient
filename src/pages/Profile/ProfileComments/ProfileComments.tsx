@@ -1,5 +1,8 @@
 import { useState } from 'react'
-import { BookRating } from '../../../components/BookRating/BookRating'
+import { BsStarFill } from 'react-icons/bs'
+import { parseDate } from '../../../Utils/parseDate'
+import { FullDate } from '../../../components/FullDate/FullDate'
+import { Pagination } from '../../../components/Pagination/Pagination'
 import { SearchBar } from '../../../components/SearchBar/SearchBar'
 import s from './ProfileComments.module.scss'
 
@@ -24,7 +27,7 @@ const comments: Array<TComment> = [
   {
     type: 'chapter',
     text: 'LolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldad',
-    date: '14 January, 2019',
+    date: '2023-11-19',
     chapterNumber: 23,
     chapterName: 'Your new parents',
     bookName: 'Tess of the Road'
@@ -32,7 +35,7 @@ const comments: Array<TComment> = [
   {
     type: 'book',
     text: 'LolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldadLolololdadladladladladlaldaldad',
-    date: '14 January, 2019',
+    date: '2023-11-19',
     bookName: 'Tess of the Road',
     rating: 4
   }
@@ -58,27 +61,41 @@ export const ProfileComments = () => {
       <ul className={s.filters}>
         {filters.map((f, i) => (
           <li
+            key={i}
             onClick={() => handleFilter(i)}
             className={`${s.li} ${activeFilter === i ? s.active : ''}`}>
             {f} (19)
           </li>
         ))}
       </ul>
-      <ul>
-        {comments.map((com, i) => (
-          <li className={s.comment} key={i}>
-            <h3>
-              Comment to {com.type} {com.type === 'book' && <BookRating rating={com.rating} />}
-            </h3>
-            <span>
-              {com.bookName}
-              {com.type === 'chapter' && ` - Chapter ${com.chapterNumber}: ${com.chapterName}`}
-            </span>
-            <div>Sent {com.date}</div>
-            <p>{com.text}</p>
-          </li>
-        ))}
+      <ul className={s.comments}>
+        {comments.map((com, i) => {
+          const parsedDate = parseDate(com.date)
+
+          return (
+            <li className={s.comment} key={i}>
+              <h3 className={s.header}>
+                <div>
+                  Comment to {com.type}{' '}
+                  {com.type === 'book' && (
+                    <span className={s.ratingWrap}>
+                      <BsStarFill color={'#F2CEF2'} />
+                      {com.rating}
+                    </span>
+                  )}
+                </div>
+                <FullDate parsedDate={parsedDate} additionalText="Sent" />
+              </h3>
+              <span className={s.bookTitle}>
+                {com.bookName}
+                {com.type === 'chapter' && ` - Chapter ${com.chapterNumber}: ${com.chapterName}`}
+              </span>
+              <p>{com.text}</p>
+            </li>
+          )
+        })}
       </ul>
+      <Pagination count={20} currentPage={0} onPageClick={() => {}} />
     </div>
   )
 }

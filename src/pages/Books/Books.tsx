@@ -7,6 +7,7 @@ import { CollapseMenu } from '../../components/CollapseMenu/CollapseMenu'
 import { Pagination } from '../../components/Pagination/Pagination'
 import { Preloader } from '../../components/Preloader/Preloader'
 import { SearchBar } from '../../components/SearchBar/SearchBar'
+import s from './Books.module.scss'
 
 export interface IFilters {
   activeTag: number
@@ -69,7 +70,7 @@ export const Books = () => {
   }, [])
 
   return (
-    <>
+    <div className={s.wrap}>
       <BigSlider data={sliderData} />
       <SearchBar type="book" query={query} setQuery={setQuery} setPage={setPage} />
       <CollapseMenu
@@ -93,11 +94,7 @@ export const Books = () => {
       ) : (
         <BooksList status={status} books={booksData} />
       )}
-      <Pagination
-        booksCount={booksCount}
-        currentPage={page}
-        onPageClick={(number) => setPage(number)}
-      />
-    </>
+      <Pagination count={booksCount} currentPage={page} onPageClick={(number) => setPage(number)} />
+    </div>
   )
 }

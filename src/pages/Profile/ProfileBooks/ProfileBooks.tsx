@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { FaSortAmountDown, FaSortAmountDownAlt } from 'react-icons/fa'
-import { AddedBooksSkeleton } from '../../../components/AddedBooksSkeleton/AddedBooksSkeleton'
+import { parseDate } from '../../../Utils/parseDate'
+import { FullDate } from '../../../components/FullDate/FullDate'
 import { SearchBar } from '../../../components/SearchBar/SearchBar'
+import img from '../../../images/download.jpg'
 import s from './ProfileBooks.module.scss'
 
 const categories = ['All', 'Planned', 'Abandoned', 'Reading', 'Finished', 'Favourites']
@@ -11,6 +13,8 @@ export const ProfileBooks = () => {
   const [category, setCategory] = useState(0)
   const [sortType, setSortType] = useState(0)
   const [isAsc, setIsAsc] = useState(true)
+
+  const parsedDate = parseDate('2023-11-19')
 
   const handleCategory = (i: number) => {
     if (category !== i) setCategory(i)
@@ -63,12 +67,12 @@ export const ProfileBooks = () => {
       <main className={s.main}>
         <SearchBar type="book" query="" setQuery={() => {}} setPage={() => {}} width="100%" />
         <div className={s.booksWrap}>
-          {/* <div className={s.book}>
+          <div className={s.book}>
             <img src={img} alt="book image" />
             <div className={s.right}>
               <div>
                 <h2>Tess of the Road</h2>
-                <div>Added 13 May, 2023</div>
+                <FullDate parsedDate={parsedDate} additionalText="Added" />
                 <div>Finished</div>
               </div>
               <div className={s.chapters}>
@@ -76,12 +80,110 @@ export const ProfileBooks = () => {
                 <div className={s.continueBtn}>Continue (14)</div>
               </div>
             </div>
-          </div> */}
-          {new Array(4).fill(null).map((elem, i) => (
+          </div>
+          <div className={s.book}>
+            <img src={img} alt="book image" />
+            <div className={s.right}>
+              <div>
+                <h2>Tess of the Road</h2>
+                <FullDate parsedDate={parsedDate} additionalText="Added" />
+                <div>Finished</div>
+              </div>
+              <div className={s.chapters}>
+                <h4>Last chapter: 20</h4>
+                <div className={s.continueBtn}>Continue (14)</div>
+              </div>
+            </div>
+          </div>
+          <div className={s.book}>
+            <img src={img} alt="book image" />
+            <div className={s.right}>
+              <div>
+                <h2>Tess of the Road</h2>
+                <FullDate parsedDate={parsedDate} additionalText="Added" />
+                <div>Finished</div>
+              </div>
+              <div className={s.chapters}>
+                <h4>Last chapter: 20</h4>
+                <div className={s.continueBtn}>Continue (14)</div>
+              </div>
+            </div>
+          </div>
+          <div className={s.book}>
+            <img src={img} alt="book image" />
+            <div className={s.right}>
+              <div>
+                <h2>Tess of the Road</h2>
+                <FullDate parsedDate={parsedDate} additionalText="Added" />
+                <div>Finished</div>
+              </div>
+              <div className={s.chapters}>
+                <h4>Last chapter: 20</h4>
+                <div className={s.continueBtn}>Continue (14)</div>
+              </div>
+            </div>
+          </div>
+          <div className={s.book}>
+            <img src={img} alt="book image" />
+            <div className={s.right}>
+              <div>
+                <h2>Tess of the Road</h2>
+                <FullDate parsedDate={parsedDate} additionalText="Added" />
+                <div>Finished</div>
+              </div>
+              <div className={s.chapters}>
+                <h4>Last chapter: 20</h4>
+                <div className={s.continueBtn}>Continue (14)</div>
+              </div>
+            </div>
+          </div>
+          <div className={s.book}>
+            <img src={img} alt="book image" />
+            <div className={s.right}>
+              <div>
+                <h2>Tess of the Road</h2>
+                <FullDate parsedDate={parsedDate} additionalText="Added" />
+                <div>Finished</div>
+              </div>
+              <div className={s.chapters}>
+                <h4>Last chapter: 20</h4>
+                <div className={s.continueBtn}>Continue (14)</div>
+              </div>
+            </div>
+          </div>
+          <div className={s.book}>
+            <img src={img} alt="book image" />
+            <div className={s.right}>
+              <div>
+                <h2>Tess of the Road</h2>
+                <FullDate parsedDate={parsedDate} additionalText="Added" />
+                <div>Finished</div>
+              </div>
+              <div className={s.chapters}>
+                <h4>Last chapter: 20</h4>
+                <div className={s.continueBtn}>Continue (14)</div>
+              </div>
+            </div>
+          </div>
+          <div className={s.book}>
+            <img src={img} alt="book image" />
+            <div className={s.right}>
+              <div>
+                <h2>Tess of the Road</h2>
+                <FullDate parsedDate={parsedDate} additionalText="Added" />
+                <div>Finished</div>
+              </div>
+              <div className={s.chapters}>
+                <h4>Last chapter: 20</h4>
+                <div className={s.continueBtn}>Continue (14)</div>
+              </div>
+            </div>
+          </div>
+          {/* {new Array(4).fill(null).map((elem, i) => (
             <div key={i} className={s.preloaderWrap}>
               <AddedBooksSkeleton />
             </div>
-          ))}
+          ))} */}
         </div>
       </main>
     </div>

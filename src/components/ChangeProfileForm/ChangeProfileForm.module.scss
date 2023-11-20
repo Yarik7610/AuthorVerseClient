@@ -1,0 +1,11 @@
+@import '../../App.scss';
+
+.wrap {
+  padding: 45px;
+  box-sizing: border-box;
+  width: 100%;
+  height: inherit;
+  .form {
+    @extend %forms;
+  }
+}

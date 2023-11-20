@@ -1,0 +1,86 @@
+@import '../../../Variables.scss';
+@import '../../../App.scss';
+
+.wrap {
+  width: 85%;
+  margin: 0 auto;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+  .grid {
+    display: grid;
+    margin: 0 0 40px 0;
+    gap: 20px;
+    grid-template-areas:
+      'nav main'
+      'nav main';
+    grid-template-columns: 200px 1fr;
+    @media (max-width: 1030px) {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'main main'
+        'nav nav';
+    }
+    .nav {
+      grid-area: nav;
+      .navBlock {
+        background-color: $lightgray;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        max-height: 200px;
+        overflow-y: auto;
+        @extend %invisibleScrollbar;
+        h3 {
+          padding: 0px 15px 5px 15px;
+        }
+        .li {
+          padding: 7px 15px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .nick {
+            @extend %invisibleScrollbar;
+            max-width: 85px;
+            overflow-x: auto;
+          }
+        }
+      }
+    }
+    .main {
+      grid-area: main;
+      .friends {
+        max-height: 450px;
+        overflow-y: auto;
+        // @extend %invisibleScrollbar;
+        .friend {
+          display: flex;
+          justify-content: space-between;
+          background-color: $lightgray;
+          border-radius: 10px;
+          padding: 15px;
+          margin-bottom: 20px;
+          gap: 10px;
+          flex-wrap: wrap;
+          .imgAndNick {
+            @extend %profileImgAndNick;
+          }
+        }
+      }
+    }
+  }
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  gap: 2px;
+  @media (max-width: 768px) {
+    width: 40px;
+  }
+  svg {
+    cursor: pointer;
+  }
+}

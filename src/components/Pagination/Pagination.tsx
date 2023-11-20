@@ -5,16 +5,16 @@ import { ModalPagination } from '../Modal/ModalPagination/ModalPagination'
 import s from './Pagination.module.scss'
 
 export interface IPagination {
-  booksCount: number
+  count: number
   currentPage: number
   onPageClick: (number: number) => void
 }
 
 export const Pagination: React.FC<IPagination> = React.memo(
-  ({ currentPage, onPageClick, booksCount }) => {
+  ({ currentPage, onPageClick, count }) => {
     const [isOpened, setIsOpened] = useState(false)
     let pages = []
-    const LAST_PAGE = Math.ceil(booksCount / 5)
+    const LAST_PAGE = Math.ceil(count / 5)
     for (let i = 0; i < LAST_PAGE; i++) {
       pages.push(i + 1)
     }
@@ -35,7 +35,7 @@ export const Pagination: React.FC<IPagination> = React.memo(
       if (currentPage < pages.length) onPageClick(currentPage + 1)
     }
 
-    if (booksCount === 0) return <></>
+    if (count === 0) return <></>
     return (
       <div className={s.wrap}>
         <ul>

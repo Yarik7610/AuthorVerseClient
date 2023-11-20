@@ -8,9 +8,10 @@ import { Main } from './pages/Main/Main'
 import { Profile } from './pages/Profile/Profile'
 import { ProfileBooks } from './pages/Profile/ProfileBooks/ProfileBooks'
 import { ProfileComments } from './pages/Profile/ProfileComments/ProfileComments'
+import { ProfileFriends } from './pages/Profile/ProfileFriends/ProfileFriends'
 import { Signup } from './pages/Signup/Signup'
 
-const App = () => {
+export const App = () => {
   return (
     <>
       <Header />
@@ -23,7 +24,7 @@ const App = () => {
           <Route path="/profile" element={<Profile />}>
             <Route path="" element={<ProfileBooks />} />
             <Route path="comments" element={<ProfileComments />} />
-            <Route path="friends" element={<div>friends</div>} />
+            <Route path="friends" element={<ProfileFriends />} />
             <Route path="yourBooks" element={<div>your books</div>} />
           </Route>
           <Route path="*" element={<div>Not found</div>} />
@@ -33,5 +34,3 @@ const App = () => {
     </>
   )
 }
-
-export default App

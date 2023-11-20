@@ -19,15 +19,36 @@
       @extend %profileNavLi;
     }
   }
-  .comment {
-    border-radius: 10px;
-    background-color: $lightgray;
-    padding: 30px;
-    max-height: 300px;
-    overflow-y: auto;
-    margin-top: 20px;
-    p {
-      margin: 10px 0;
+  .comments {
+    margin-bottom: 40px;
+    .comment {
+      overflow-y: auto;
+      // @extend %invisibleScrollbar;
+      border-radius: 10px;
+      background-color: $lightgray;
+      padding: 30px;
+      height: 250px;
+      overflow-y: auto;
+      margin-top: 20px;
+      .header {
+        display: flex;
+        justify-content: space-between;
+        @media (max-width: 768px) {
+          display: block;
+        }
+      }
+      .ratingWrap {
+        margin: 0 10px;
+        display: inline-flex;
+        gap: 5px;
+        align-items: center;
+      }
+      .bookTitle {
+        color: $purple;
+      }
+      p {
+        margin: 10px 0;
+      }
     }
   }
 }

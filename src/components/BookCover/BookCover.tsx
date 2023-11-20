@@ -1,6 +1,7 @@
 import { parseDate } from '../../Utils/parseDate'
 import { BookRating } from '../BookRating/BookRating'
 import { IListBook } from '../BooksList/BooksList'
+import { FullDate } from '../FullDate/FullDate'
 import { Tape } from '../Tape/Tape'
 import s from './BookCover.module.scss'
 
@@ -24,8 +25,9 @@ export const BookCover: React.FC<IBookCover> = ({ book }) => {
       <div className={s.right}>
         <h2 className={s.bookTitle}>{book.title ? book.title : 'No title yet'}</h2>
         <div className={s.authorUserName}>{book.author.userName}</div>
-        <div
-          className={s.date}>{`${parsedDate.monthFull} ${parsedDate.day}, ${parsedDate.year}`}</div>
+        <div className={s.dateWrap}>
+          <FullDate parsedDate={parsedDate} />
+        </div>
         <p>{book.description ? book.description : 'No description yet'}</p>
         <div className={s.tapes}>
           <Tape key="tape1" color="purple" date={parsedDate} data={book.tags} />

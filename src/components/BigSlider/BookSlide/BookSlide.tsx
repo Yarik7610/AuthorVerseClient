@@ -1,5 +1,6 @@
 import { parseDate } from '../../../Utils/parseDate'
 import { BookRating } from '../../BookRating/BookRating'
+import { FullDate } from '../../FullDate/FullDate'
 import { Tape } from '../../Tape/Tape'
 import s from './BookSlide.module.scss'
 
@@ -46,7 +47,7 @@ export const BookSlide: React.FC<IBookSlide> = ({ book }) => {
             <h2>{book.title ? book.title : 'No title yet'}</h2>
             <div>
               <div>{book.author.userName}</div>
-              <div>{`${parsedDate.monthFull} ${parsedDate.day}, ${parsedDate.year}`}</div>
+              <FullDate parsedDate={parsedDate} />
             </div>
             <p className={s.desc}>{book.description ? book.description : 'No description yet'}</p>
             <Tape data={book.tags} date={parsedDate} color="purple" />
